@@ -9,7 +9,7 @@ require('dotenv').config();
 const app = express();
 
 var corsOptions = {
-    origin: '*',
+    origin: 'https://food-delivery-gui.herokuapp.com',
     optionsSuccessStatus: 200
 }
 
