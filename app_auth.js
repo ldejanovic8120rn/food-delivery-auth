@@ -9,7 +9,7 @@ require('dotenv').config();
 const app = express();
 
 var corsOptions = {
-    origin: ['http://localhost:8080', 'http://localhost:8083'],
+    origin: '*',
     optionsSuccessStatus: 200
 }
 
@@ -88,7 +88,7 @@ app.post('/login', (req, res) => {
     });
 });
 
-app.listen({ port: 8082 }, async () => {
+app.listen({ port: process.env.PORT || 8082 }, async () => {
     await sequelize.authenticate();
     console.log('Auth server started!');
 });
